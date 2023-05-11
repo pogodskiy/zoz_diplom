@@ -1,0 +1,28 @@
+{% extends 'post/base.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    {% if post %}
+        <ul>
+            <div class="posts">
+                <h1>Название:{{ post.title }}</h1>
+                <p>Описание:{{ post.post_body|safe }}</p>
+                <p>Автор: {{ post.author }}</p>
+                <h3>Комментарии:{{ post.comments }}</h3>
+            </div>
+        </ul>
+        <ul>
+            {% for comment in post.comments.all %}
+                <li>{{ comment }}</li>
+            {% endfor %}
+        </ul>
+        <div class="content">
+            <ul>
+                <a href="{% url 'posts' %}">Назад</a>
+            </ul>
+        </div>
+    {% else %}
+        <p>Пост не найден</p>
+    {% endif %}
+{% endblock %}

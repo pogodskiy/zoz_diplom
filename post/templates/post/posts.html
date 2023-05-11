@@ -1,0 +1,41 @@
+{% extends 'post/base.html' %}
+
+{% block title %}Посты{% endblock %}
+
+{% block content %}
+  <div class="content">
+    <a href="{% url 'posts' %}" class="actions">Все категории</a>
+    <ul>
+        {% for c in cat %}
+            {% if c.pk == cat_selected %} class="selected"{% endif %}
+                {% if c.pk == cat_selected %}
+                    <li><a href="{% url 'posts' c.pk %}" class="selected">{{ c.name_cat }}</a></li>
+                {% else %}
+                    <li><a href="{% url 'posts' c.pk %}">{{ c.name_cat }}</a></li>
+                {% endif %}
+
+        {% endfor %}
+    </ul>
+    </div>
+
+
+    <div class="create">
+      <a href="{% url 'create_post' %}" class="detail">Создать пост</a>
+    </div>
+
+    <div class="posts">
+      {% for post in posts %}
+        <div class="post">
+          <h2>{{ post.title }}</h2>
+          <p>{{ post.post_body }}</p>
+          <p>Автор: {{ post.author }}</p>
+          <p>Категория: {{ post.cat }}</p>
+          <p>Дата создания: {{ post.date }}</p>
+          <a href="{% url 'post_detail' post.id %}" class="detail">Подробнее</a>
+        </div>
+      {% empty %}
+        <p>Постов нет</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

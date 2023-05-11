@@ -1,0 +1,14 @@
+{% extends 'about/base.html' %}
+
+{% block content %}
+    <div class="about-container">
+        <h1>{{ about.name }}</h1>
+        <p>Город: {{ about.city }}</p>
+        <h1>Контакты</h1>
+        <il>
+            <li>Телефон: {{ contacts.phone }}</li>
+            <li>E-mail: {{ contacts.email }}</li>
+            <li>Telegram: {{ contacts.telegramm }}</li>
+        </il>
+    </div>
+{% endblock %}

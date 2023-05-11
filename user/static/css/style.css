@@ -1,0 +1,208 @@
+.menu {
+  background-color: #333;
+  color: #fff;
+}
+
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  display: inline-block;
+  margin: 10px;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu selected a {
+  background-color: #fff;
+  color: #333;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  float: right;
+}
+
+.main {
+  flex: 1;
+}
+
+.post {
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.actions {
+  display: flex;
+  margin-bottom: 20px;
+  width: 100%;
+  max-height: 200px; /* максимальная высота блока в пикселях */
+  overflow-y: auto; /* добавляем полосу прокрутки в случае переполнения */
+}
+
+
+.create {
+  background-color: #007bff;
+  border-radius: 4px;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  max-height: 200px;
+}
+
+.search input[type="text"] {
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+  width: 60%;
+}
+
+.search button {
+  background-color: #007bff;
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.detail {
+  background-color: #007bff;
+  border-radius: 4px;
+  color: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+
+
+
+.content {
+display: flex;
+flex-direction: row;
+justify-content: space-between; /* расположение элементов в строку */
+}
+
+.about {
+flex: 1; /* элемент будет занимать свободное пространство в строке /
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 4px;
+margin-right: 10px; / отступ справа */
+}
+
+.about h1 {
+font-size: 24px;
+margin-bottom: 20px;
+}
+
+.about p {
+font-size: 18px;
+margin-bottom: 10px;
+}
+
+.contacts {
+flex: 1; /* элемент будет занимать свободное пространство в строке */
+padding: 20px;
+border: 1px solid #ddd;
+border-radius: 4px;
+}
+
+.contacts h1 {
+font-size: 24px;
+margin-bottom: 20px;
+}
+
+.contacts ul {
+font-size: 18px;
+margin-bottom: 10px;
+list-style-type: none;
+}
+
+
+.contacts li {
+margin-bottom: 5px;
+}
+
+.contacts li:before {
+color: #007bff; / цвет маркера */
+content: none;
+display: inline-block;
+width: 1em;
+margin-left: -1em;
+}
+
+.contacts a {
+color: #007bff;
+text-decoration: none;
+}
+
+.contacts a:hover {
+text-decoration: underline;
+}
+
+about {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 20px;
+}
+
+.about h1 {
+font-size: 24px;
+margin-bottom: 10px;
+}
+
+.about p {
+font-size: 16px;
+margin-bottom: 5px;
+}
+
+.contacts {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 20px;
+}
+
+.contacts h1 {
+font-size: 24px;
+margin-bottom: 10px;
+}
+
+.contacts ul {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+.contacts li {
+font-size: 16px;
+margin-bottom: 5px;
+}
+
+.contacts li:first-child {
+margin-top: 5px;
+}
+
+.contacts li a {
+color: #007bff;
+}
+
+.contacts li a:hover {
+text-decoration: underline;
+}
+

@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Главная{% endblock %}</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="{% url 'home' %}">Главная</a></li>
+            <li><a href="{% url 'posts' %}">Посты</a></li>
+{#            <li><a href="{% url 'shop' %}">Магазин</a></li>#}
+            <li><a href="{% url 'about' %}">О сайте</a></li>
+        </ul>
+        <div class="sidebar">
+        {% if user.is_authenticated %}
+            <ul>
+                <a href="{% url 'profile' %}">Кабинет</a>
+                <a href="{% url 'logout' %}">Выход</a>
+            </ul>
+        {% else %}
+            <ul>
+                <a href="{% url 'login' %}">Вход</a>
+                <a href="{% url 'register' %}">Регистрация</a>
+            </ul>
+        {% endif %}
+        </div>
+    </div>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
