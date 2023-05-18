@@ -2,13 +2,16 @@
 
 {% block content %}
     <div class="about-container">
-        <h1>{{ about.name }}</h1>
-        <p>Город: {{ about.city }}</p>
-        <h1>Контакты</h1>
-        <il>
-            <li>Телефон: {{ contacts.phone }}</li>
-            <li>E-mail: {{ contacts.email }}</li>
-            <li>Telegram: {{ contacts.telegramm }}</li>
-        </il>
+        {% for obj in about %}
+            <h1>{{ obj.name }}</h1>
+            <p>Город: {{ obj.city }}</p>
+        {% endfor %}
+
+        {% for contact in contacts %}
+            <p>Телефон: {{ contact.phone }}</p>
+            <p>E-mail: {{ contact.email }}</p>
+            <p>Telegram: {{ contact.telegramm }}</p>
+        {% endfor %}
+
     </div>
 {% endblock %}

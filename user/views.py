@@ -58,15 +58,7 @@ def user_logout(request):
     return redirect('home')
 
 
-def user_delete(request, user_id):
-    try:
-        user = User.objects.get(id=user_id)
-        user.delete()
-        return True, "Пользователь успешно удален."
-    except User.DoesNotExist:
-        return False, "Пользователь с указанным ID не найден."
 
 
-def profile(request,user_id):
-    pass
+
 

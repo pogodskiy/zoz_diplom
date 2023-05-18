@@ -55,32 +55,8 @@ def posts_detail(request, post_id):
 
 
 
-@login_required
-def post_update(request, product_id):
-    post = get_object_or_404(Post, id=product_id)
-    if request.method == 'POST':
-        form = PostForm(request.POST, instance=post)
-        if form.is_valid():
-            form.save()
-            return redirect(
-                'posts:list')
-    else:
-        form = PostForm(instance=post)
-    return render(request, 'post_update.html', {'form': form, 'post': post})
-
-@login_required
-def post_delete(request, product_id):
-    post = get_object_or_404(Post, id=product_id)
-    if request.method == 'POST':
-        post.delete()
-        return redirect(
-            'posts:list')
-    return render(request, 'post_delete.html', {'post': post})
 
 
-def posts_user(request, name):
-    user = User.objects.get(username=name)
-    posts = Post.objects.filter(author=user)
-    context = {'user': user, 'posts': posts}
-    return render(request, 'post_user.html', context)
+
+
 

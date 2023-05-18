@@ -41,8 +41,9 @@ INSTALLED_APPS = [
     'user',
     # 'shop.apps.ShopConfig',
     # 'bucket.apps.BucketConfig',
-    # 'user_profile',
+    'profiles.apps.ProfilesConfig',
     'about',
+    'shop',
 ]
 
 MIDDLEWARE = [
