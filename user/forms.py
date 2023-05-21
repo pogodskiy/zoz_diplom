@@ -27,7 +27,7 @@ class LoginForm(forms.Form):
 class UserForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['username', 'email']
+        fields = ['username', 'email', 'country', 'sex','supplier']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

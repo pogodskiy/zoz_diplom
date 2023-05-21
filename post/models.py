@@ -5,7 +5,8 @@ class CatPost(models.Model):
     CATEGORY_CHOICES = [
         ('health', 'Health'),
         ('meal', 'Meal'),
-        ('exercise', 'Exercise')
+        ('exercise', 'Exercise'),
+        ('other', 'Other'),
     ]
     name_cat = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
 

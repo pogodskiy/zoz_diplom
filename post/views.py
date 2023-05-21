@@ -1,18 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from post.models import Post
-from django.contrib.auth.decorators import login_required
 from post.forms import PostForm
-from user.models import User
-from django.contrib.auth import get_user
-from django.views import View
-from django.http import HttpResponseRedirect
-from django.urls import reverse
-
 from django.contrib.auth.decorators import login_required
-
-
-from django.shortcuts import render
 from .models import Post, CatPost
+
 
 def posts(request, cat_selected=0):
     cat = CatPost.objects.all()
@@ -26,7 +16,6 @@ def posts(request, cat_selected=0):
     return render(request, 'post/posts.html', context)
 
 
-
 @login_required
 def create_post(request):
     if request.method == 'POST':
@@ -35,12 +24,10 @@ def create_post(request):
             post = form.save(commit=False)
             post.author = request.user
             post.save()
-            return render(request, 'user/home.html')
+            return redirect('home')
     else:
         form = PostForm()
     return render(request, 'post/create_post.html', {'form': form})
-
-
 
 
 def posts_detail(request, post_id):
@@ -51,12 +38,3 @@ def posts_detail(request, post_id):
     else:
         context = {'post': post}
         return render(request, 'post/post_detail.html', context)
-
-
-
-
-
-
-
-
-

@@ -25,6 +25,9 @@ class User(AbstractBaseUser):
     username = models.CharField(max_length=20, verbose_name='Username', unique=True)
     password = models.CharField(max_length=128)
     email = models.EmailField(unique=True, null=True)
+    country = models.CharField(max_length=30, default='')
+    sex = models.CharField(max_length=10, default='choice', choices=[('male', 'male'), ('female', 'female')])
+    supplier = models.BooleanField(default=False)
 
 
     is_active = models.BooleanField(default=True)
